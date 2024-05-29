@@ -2,6 +2,7 @@ import ListGroup from './components/ListGroup/ListGroup';
 import Alert from './components/Alert';
 import Button from './components/Buttons';
 import ExpandableText from './components/ExpandableText';
+import Form from './components/Form';
 import { useState } from 'react';
 
 
@@ -24,6 +25,7 @@ function App() {
     
     <ListGroup items={items} heading="Cities"  onSelectItem={item => console.log(item)}/>
     <ExpandableText >Hello world (testing showmore and show less button)</ExpandableText>
+    <Form></Form>
     </div>;
 }
 

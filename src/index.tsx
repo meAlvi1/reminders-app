@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import App from './App';
 import Cart_app from './Cart';
 import reportWebVitals from './reportWebVitals';
+import './index.css';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
