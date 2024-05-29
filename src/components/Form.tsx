@@ -1,8 +1,14 @@
-import React from 'react'
+import React, { FormEvent } from 'react'
 
 const Form = () => {
+    // handle form submission, preventDefault means to not send data to server
+    // when we talking to server, we shouldn't use preventDefault
+    const handleSubmit = (event: FormEvent) => {
+        event.preventDefault();
+        console.log('Submitted');
+    }
   return (
-    <form> 
+    <form onSubmit={handleSubmit}> 
         <div className="mb-3">
             <label htmlFor="name" className="form-label">Name</label>
             <input id="name" type="text" className="form-control" />
