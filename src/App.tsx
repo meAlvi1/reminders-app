@@ -1,6 +1,7 @@
 import ListGroup from './components/ListGroup/ListGroup';
 import Alert from './components/Alert';
 import Button from './components/Buttons';
+import ExpandableText from './components/ExpandableText';
 import { useState } from 'react';
 
 
@@ -21,7 +22,9 @@ function App() {
     {alertVisible && <Alert onClose={() => setAlertVisible(false)}> Alert </Alert>}
     <Button  onClick={() => setAlertVisible(true)}>Click Me</Button>
     
-    <ListGroup items={items} heading="Cities"  onSelectItem={item => console.log(item)}/></div>;
+    <ListGroup items={items} heading="Cities"  onSelectItem={item => console.log(item)}/>
+    <ExpandableText >Hello world (testing showmore and show less button)</ExpandableText>
+    </div>;
 }
 
 export default App;
