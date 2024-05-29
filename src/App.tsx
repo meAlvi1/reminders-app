@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ListGroup from './components/ListGroup/ListGroup';
+import Alert from './components/Alert';
+import Button from './components/Buttons';
+import { useState } from 'react';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [alertVisible, setAlertVisible] = useState(false);
+  
+
+  let items = [
+    'New York',
+    'San Francisco',
+    'Tokyo',
+    'London',
+    'Islamabad'
+
+];
+  
+  return <div>
+    {alertVisible && <Alert onClose={() => setAlertVisible(false)}> Alert </Alert>}
+    <Button  onClick={() => setAlertVisible(true)}>Click Me</Button>
+    
+    <ListGroup items={items} heading="Cities"  onSelectItem={item => console.log(item)}/></div>;
 }
 
 export default App;
