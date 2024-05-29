@@ -1,33 +1,24 @@
 import React, { FormEvent, useRef } from 'react'
+import { useForm } from 'react-hook-form';
 
 const Form = () => {
+    // using hookform library with less code to get from data
+    const  { register, handleSubmit } = useForm();
 
-    // useRef hook is used to store a reference to an element
-    const nameRef = useRef<HTMLInputElement>(null);
-    const ageRef = useRef<HTMLInputElement>(null);
-    const person = { name: '', age: 0 };
-
-    // when we talking to server, we shouldn't use preventDefault
-    const handleSubmit = (event: FormEvent) => {
-        event.preventDefault();
-        // here nameRef.current == value (which is html element)
-        if (nameRef.current !== null)
-            person.name = nameRef.current.value;
-        if (ageRef.current !== null)
-            person.age = parseInt(ageRef.current.value);
-        
-        // we get json data for submission to server
-        console.log(person);
+    // submit function to server
+    const onSubmit = (data: any) => {
+        console.log(data)
     }
+
   return (
-    <form onSubmit={handleSubmit}> 
+    <form onSubmit={handleSubmit(onSubmit)}> 
         <div className="mb-3">
             <label htmlFor="name" className="form-label">Name</label>
-            <input ref={nameRef} id="name" type="text" className="form-control" />
+            <input {...register('name')} id="name" type="text" className="form-control" />
         </div> 
         <div className="mb-3">
             <label htmlFor="age" className="form-label">age</label>
-            <input ref={ageRef} id="age" type="number" className="form-control" />
+            <input {...register('age')} id="age" type="number" className="form-control" />
         </div>
         <button className="btn btn-primary" type="submit">Submit</button>     
     </form>
