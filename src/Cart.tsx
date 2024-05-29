@@ -10,7 +10,7 @@ const Cart_app: React.FC = () => {
   return (
     <div>
         <Navbar cartItemsCount={cartItems.length} />
-        <Cart cartItems={cartItems} />
+        <Cart cartItems={cartItems} onClear={() => setCartItems([])} />
     </div>
   );
 }
