@@ -7,8 +7,9 @@ import Form from './components/Form';
 import { useState } from 'react';
 import ExpenseFilter from './expense-tracker/components/ExpenseFilter';
 import ExpenseForm from './expense-tracker/components/ExpenseForm';
+import categories from './expense-tracker/categories';
 
-export const categories = ['Food', 'Transport', 'Clothing', 'Entertainment', 'Education']
+
 
 function App() {
   const [alertVisible, setAlertVisible] = useState(false);
