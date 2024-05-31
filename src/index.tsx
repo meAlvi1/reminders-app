@@ -1,18 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import 'bootstrap/dist/css/bootstrap.css';
-import App from './App';
-import Cart_app from './Cart';
+import router from './routing/routes';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
+import { RouterProvider } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
-    <Cart_app />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 

@@ -2,30 +2,16 @@ import ListGroup from './components/ListGroup/ListGroup';
 import Alert from './components/Alert';
 import Button from './components/Buttons';
 import ExpandableText from './components/ExpandableText';
-import ExpenseList from './expense-tracker/components/ExpenseList';
-import Form from './components/Form';
+import Form from './expense-tracker/Form';
+import Cart_app from './Cart';
 import { useState } from 'react';
-import ExpenseFilter from './expense-tracker/components/ExpenseFilter';
-import ExpenseForm from './expense-tracker/components/ExpenseForm';
-import categories from './expense-tracker/categories';
-import { Console } from 'console';
+import { Link } from 'react-router-dom';
+
 
 
 
 function App() {
   const [alertVisible, setAlertVisible] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState('');  // for filter and re-rendering list
-  const  [ expenses, setExpenses] = useState([
-    {id: 1, description: "Food", amount: 100, category: "Food"},
-    {id: 2, description: "Car", amount: 500, category: "Transport"},
-    {id: 3, description: "Clothes", amount: 200, category: "Clothing"},
-    {id: 4, description: "Entertainment", amount: 300, category: "Entertainment"},
-    {id: 5, description: "Education", amount: 400, category: "Education"},
-
-  ]);
-
-    // if selectedCategory is not empty, then filter by `category` from `expense interface` return it, else return all expenses
-  const visibleExpenses = selectedCategory ? expenses.filter(expense => expense.category === selectedCategory) : expenses;
   
 
   let items = [
@@ -41,20 +27,27 @@ function App() {
 // so only one filter so far, its in ExpenseList on Catergory filter
   
   return <div>
+    <h1>Welcome to the Home Page</h1>
+      <div className="mb-5">
+        <Link to="/form" className="btn btn-outline-primary me-2">/Form</Link>
+        <Link to="/cart" className="btn btn-outline-secondary ">/Cart</Link>
+      </div>
+      
+    <h2 className="text-muted">Alert Button</h2>
     <div className="mb-5">
-    <ExpenseForm onSubmit={expense => setExpenses([...expenses, {...expense, id: expenses.length + 1, description: expense.description || 'Default Description'}])}/>
-    </div>
-    <div className="mb-3">
-    <ExpenseFilter  onSelectCategory={category => setSelectedCategory(category)}/>
-    </div>
-    <ExpenseList expenses={visibleExpenses}  onDelete={id => setExpenses(expenses.filter(e => e.id !== id))}/>
-
     {alertVisible && <Alert onClose={() => setAlertVisible(false)}> Alert </Alert>}
     <Button  onClick={() => setAlertVisible(true)}>Click Me</Button>
+    </div>
     
-    <ListGroup items={items} heading="Cities"  onSelectItem={item => console.log(item)}/>
+    <h3 className="text-muted">List Group - practice</h3>
+    <div className="mb-3">
+    <ListGroup items={items} heading=" Cities"  onSelectItem={item => console.log(item)}/>
+    </div>
+    
+    <h3 className="text-muted">Expandable Text</h3>
+    <div className="mb 4">
     <ExpandableText >Hello world (testing showmore and show less button)</ExpandableText>
-    <Form></Form>
+    </div>
     </div>;
 }
 
