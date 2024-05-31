@@ -4,6 +4,9 @@ This project was bootstrapped with [react + typescript]
 
 ## Available Scripts
 `ExpenseTracker`
+
+
+
 ![expensetracker](https://github.com/meAlvi1/reminders-app/assets/64131775/9778e7b2-2a4c-46d9-918f-fdd9afe746bb)
 
 In the project directory, you will Practical Features that i have built in Typescript and React:
