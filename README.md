@@ -1,10 +1,12 @@
-# Getting Started with Create React App
+# Getting Started with Typescript + React `Front-end` Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [react + typescript]
 
 ## Available Scripts
+`ExpenseTracker`
+![expensetracker](https://github.com/meAlvi1/reminders-app/assets/64131775/9778e7b2-2a4c-46d9-918f-fdd9afe746bb)
 
-In the project directory, you can run:
+In the project directory, you will Practical Features that i have built in Typescript and React:
 
 ### `npm start`
 
